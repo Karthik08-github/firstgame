@@ -1,0 +1,2 @@
+language = "c"
+run = "cc newg.c && ./a.out"

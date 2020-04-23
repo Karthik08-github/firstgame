@@ -1,16 +1,18 @@
 #include<stdio.h>
-#include<conio.h>
 #include<string.h>
-void main()
+
+#define clear() printf("\033[H\033[J")
+
+int main()
 {
-int i,j,c,count=0,ans=0,flag=0,*ptr;
-char a[1][6]={"gvpcea"};
-char b[10],alpha;
-char d='_';
-c=strlen(&a[0][0]);
-printf("\n\n\t\t\t ** HANGMAN ** \n");
-printf("\n\t\t\t**************\t\t\t");
-printf("\n\t\t\t..............\n\n\t\t\t  ");
+  int i,j,c,count=0,ans=0,flag=0,*ptr;
+  char a[1][6]={"gvpcea"};
+  char b[10],alpha;
+  char d='_';
+  c=strlen(&a[0][0]);
+  printf("\n\n\t\t\t ** HANGMAN ** \n");
+  printf("\n\t\t\t**************\t\t\t");
+  printf("\n\t\t\t..............\n\n\t\t\t  ");
 for(j=0;j<c;j++)
 	  {
  printf("%c ",d);
@@ -21,8 +23,8 @@ for(j=0;j<c;j++)
 while (count<6)//||(ans<c))
  {
            flag=0;
-	   printf("\n\n\n\n\n\n\t enter a char");
-		alpha=getche();
+	   printf("\n\n\n\n\n\n\t enter a char: ");
+		alpha=getchar();
 	  	for(i=0;i<c;i++)
 		{
 			if (alpha==a[0][i])
@@ -57,5 +59,6 @@ while (count<6)//||(ans<c))
  printf("\n\n\n\t you won");
  else 
  printf("\n\n\n\t\t  u lose.\n\n \t\t **SORRY  U R HANGED**");
-getch();
+//getch();
+  return 0;
 }
